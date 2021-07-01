@@ -12,10 +12,10 @@ namespace game {
 		float velocity;
 		sf::Vector2f position = { 400, 400 };
 		sf::RectangleShape * shape;
-		sf::RenderWindow window;
+		sf::RenderWindow * window;
 	public:
-		Player(sf::RenderWindow &window);
-		void update(sf::Time deltaTime, sf::RenderWindow &window);
+		Player(sf::RenderWindow *window);
+		void update(sf::Time deltaTime);
 		void move(sf::Event *event, sf::Time deltaTime);
 		void setVelocity(float velocity);
 		sf::Vector2f getPosition();
@@ -24,8 +24,8 @@ namespace game {
 		float getVelocity();
 		void setShape();
 		void moveShape();
-		void setWindow(sf::RenderWindow& window);
-		sf::RenderWindow getWindow();
+		void setWindow(sf::RenderWindow * window);
+		sf::RenderWindow*  getWindow();
 	};
 }
 

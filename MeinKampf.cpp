@@ -10,8 +10,11 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(800, 800), "AAAAAA CON RAZON");
-    game::Player* player = new game::Player(window);
+    game::Player* player = new game::Player(&window);
     sf::Clock deltaClock;
+
+    window.setFramerateLimit(120);
+
     while (window.isOpen())
     {
         sf::Time deltaTime = deltaClock.restart();
@@ -28,10 +31,9 @@ int main()
         }
 
         window.clear();
-        player->update(deltaTime, window);
+        player->update(deltaTime);
         window.display();
     }
 
     return EXIT_SUCCESS;
-
 };

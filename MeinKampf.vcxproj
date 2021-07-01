@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="MeinKampf.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="player.jpg" />
