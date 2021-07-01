@@ -8,7 +8,8 @@
 namespace game{
 	class Window : sf::RenderWindow
 	{
-
+	public:
+		Window();
 	};
 }
 

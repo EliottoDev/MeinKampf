@@ -6,12 +6,15 @@
 #include<SFML/Window.hpp>
 #include "Player.h"
 #include<iostream>
+#include "Cloud.h"
 
 int main()
-{
-    sf::RenderWindow window(sf::VideoMode(800, 800), "AAAAAA CON RAZON");
+{   
+
+    sf::RenderWindow window(sf::VideoMode(), "AAAAAA CON RAZON", sf::Style::Fullscreen);
     game::Player* player = new game::Player(&window);
     sf::Clock deltaClock;
+    game::Cloud* nube = new game::Cloud(&window);
 
     window.setFramerateLimit(120);
 
@@ -26,12 +29,15 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            //if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F11)
+            //    if()
             if (event.type == sf::Event::KeyPressed)
                 player->move(&event, deltaTime);
         }
 
         window.clear();
         player->update(deltaTime);
+        nube->update(deltaTime);
         window.display();
     }
 
